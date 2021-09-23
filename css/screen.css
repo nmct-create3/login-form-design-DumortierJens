@@ -2,12 +2,59 @@
 #FONTS
 \*------------------------------------*/
 
+@font-face {
+    font-family: 'Inter Web';
+    font-weight: 400;
+    src: url('../fonts/Inter-Regular.woff2') format('woff2');
+    font-display: auto;
+}
+
+@font-face {
+    font-family: 'Inter Web';
+    font-weight: 600;
+    src: url('../fonts/Inter-SemiBold.woff2') format('woff2');
+    font-display: auto;
+}
+
 /*------------------------------------*\
 #Variables
 \*------------------------------------*/
 
 :root {
+    /* Colors */
+    --global-color-alpha-light: #4f95ff;
+    --global-color-alpha: #3385ff;
+    --global-color-alpha-dark: #2e77e6;
+    --global-color-alpha-x-dark: #1b4186;
+    --global-color-transparent: #3385ffbf;
+    --global-color-x-transparent: #3385ff4d;
 
+    --global-color-neutral-xxxx-light: #f5f6fa;
+    --global-color-neutral-xxx-light: #e2e3e7;
+    --global-color-neutral-xx-light: #caccd4;
+    --global-color-neutral-x-light: #b5b6c0;
+    --global-color-neutral-light: #a0a1ad;
+    --global-color-neutral: #8b8c9a;
+    --global-color-neutral-dark: #757787;
+    --global-color-neutral-x-dark: #606274;
+    --global-color-neutral-xx-dark: #4b4c60;
+    --global-color-neutral-xxx-dark: #35374d;
+    --global-color-neutral-xxxx-dark: #20223a;
+
+    /* Borders */
+    --global-borderRadius: 3px;
+    --global-borderWidth: 1px;
+
+    /* Whitespace */
+    --global-baseline: 8px;
+    --global-whitespace: calc(var(--global-baseline) * 3); /* = 24px */
+    --global-whitespace-xs: calc(var(--global-baseline) / 2); /* = 4px */
+    --global-whitespace-sm: calc(var(--global-baseline) * 1); /* = 8px */
+    --global-whitespace-md: calc(var(--global-baseline) * 2); /* = 16px */
+    --global-whitespace-lg: calc(var(--global-baseline) * 4); /* = 32px */
+    --global-whitespace-xl: calc(var(--global-whitespace) * 2); /* = 48px */
+    --global-whitespace-xxl: calc(var(--global-whitespace) * 3); /* = 72px */
+    --global-whitespace-xxxl: calc(var(--global-whitespace) * 4); /* = 96px */
 }
 
 /* CSS variables here */
@@ -25,12 +72,12 @@
 html {
     font-size: 16px;
     line-height: 1.5;
-    font-family: Helvetica, arial, sans-serif;
-    color: grey;
+    font-family: 'Inter Web', Helvetica, arial, sans-serif;
+    color: var(--global-color-neutral-xxxx-dark);
     box-sizing: border-box;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    background-color: white;
+    background-color: var(--global-color-neutral-xxxx-light);
 }
 
 *,
@@ -47,13 +94,13 @@ html {
 */
 
 ::-moz-selection {
-    background: HotPink;
+    background: var(--global-color-alpha);
     color: white;
     text-shadow: none;
 }
 
 ::selection {
-    background: HotPink;
+    background: var(--global-color-alpha);
     color: white;
     text-shadow: none;
 }
@@ -87,28 +134,28 @@ h3 {
 
 h1 {
     font-size: 36px;
-    line-height: 48px;
-    margin: 0 0 24px;
+    line-height: calc(var(--global-baseline) * 6);
+    margin: 0 0 var(--global-whitespace);
 }
 
 h2 {
     font-size: 32px;
-    line-height: 40px;
-    margin: 0 0 24px;
+    line-height: calc(var(--global-baseline) * 5);
+    margin: 0 0 var(--global-whitespace);
 }
 
 h3 {
     font-size: 26px;
-    line-height: 32px;
-    margin: 0 0 24px;
+    line-height: calc(var(--global-baseline) * 4);
+    margin: 0 0 var(--global-whitespace);
 }
 
 h4,
 h5,
 h6 {
     font-size: 20px;
-    line-height: 24px;
-    margin: 0 0 24px;
+    line-height: calc(var(--global-baseline) * 3);
+    margin: 0 0 var(--global-whitespace);
 }
 
 p,
@@ -118,12 +165,12 @@ dl,
 table,
 address,
 figure {
-    margin: 0 0 24px;
+    margin: 0 0 var(--global-whitespace);
 }
 
 ul,
 ol {
-    padding-left: 24px;
+    padding-left: var(--global-whitespace);
 }
 
 li ul,
@@ -134,8 +181,8 @@ li ol {
 blockquote {
     font-style: normal;
     font-size: 23px;
-    line-height: 32px;
-    margin: 0 0 24px;
+    line-height: calc(var(--global-baseline) * 4);
+    margin: 0 0 var(--global-whitespace);
 }
 
 blockquote * {
@@ -146,30 +193,35 @@ blockquote * {
 figcaption {
     font-weight: 400;
     font-size: 12px;
-    line-height: 16px;
-    margin-top: 8px;
+    line-height: calc(var(--global-baseline) * 2);
+    margin-top: var(--global-whitespace-sm);
 }
 
 hr {
     border: 0;
     height: 1px;
     background: LightGrey;
-    margin: 0 0 24px;
+    margin: 0 0 var(--global-whitespace);
 }
 
 a {
-    color: HotPink;
-    transition: all .1s ease-in-out;
+    color: var(--global-color-alpha);
+    transition: all 0.1s ease-in-out;
 }
 
 a:visited,
 a:active {
-    color: HotPink;
+    color: var(--global-color-alpha);
 }
 
 a:hover,
 a:focus {
-    color: DeepPink;
+    color: var(--global-color-alpha-light);
+}
+
+label,
+input {
+    display: block;
 }
 
 /*------------------------------------*\
@@ -184,36 +236,38 @@ a:focus {
 
 .o-row {
     position: relative;
-    padding: 24px 24px 0;
+    padding: var(--global-whitespace) var(--global-whitespace) 0;
 }
 
 .o-row--login {
-    /* stuff here to align the card */
+    height: 100vh;
+    display: flex;
+    align-items: center;
 }
 
 /* size modifiers */
 
 .o-row--lg {
-    padding-top: 48px;
-    padding-bottom: 24px;
+    padding-top: var(--global-whitespace-xl);
+    padding-bottom: var(--global-whitespace);
 }
 
 .o-row--xl {
-    padding-top: 72px;
-    padding-bottom: 48px;
+    padding-top: var(--global-whitespace-xxl);
+    padding-bottom: var(--global-whitespace-xl);
 }
 
 @media (min-width: 768px) {
     .o-row {
-        padding-left: 48px;
-        padding-right: 48px;
+        padding-left: var(--global-whitespace-xl);
+        padding-right: var(--global-whitespace-xl);
     }
 }
 
 @media (min-width: 992px) {
     .o-row--xl {
-        padding-top: 96px;
-        padding-bottom: 72px;
+        padding-top: var(--global-whitespace-xxxl);
+        padding-bottom: var(--global-whitespace-xxl);
     }
 }
 
@@ -241,19 +295,19 @@ a:focus {
 }
 
 .o-section + .o-section {
-    padding-top: 24px;
+    padding-top: var(--global-whitespace);
 }
 
 @media (min-width: 768px) {
     .o-section--lg + .o-section--lg,
     .o-section--xl + .o-section--xl {
-        padding-top: 48px;
+        padding-top: var(--global-whitespace-xl);
     }
 }
 
 @media (min-width: 992px) {
     .o-section--xl + .o-section--xl {
-        padding-top: 72px;
+        padding-top: var(--global-whitespace-xxl);
     }
 }
 
@@ -406,6 +460,7 @@ a:focus {
     width: auto;
     overflow: visible;
     background: transparent;
+    cursor: pointer;
 
     /* inherit font & color from ancestor */
     color: inherit;
@@ -432,17 +487,70 @@ a:focus {
     Website main logo
 */
 
+.c-logo {
+    height: 24px;
+    display: flex;
+    justify-content: center;
+}
+
+.c-logo__symbol {
+    height: 100%;
+    display: block;
+}
+
+.c-logo__path--1 {
+    fill: var(--global-color-neutral-xxxx-dark);
+}
+
+.c-logo__path--2 {
+    fill: var(--global-color-alpha);
+}
+
+.c-logo__path--3 {
+    fill: var(--global-color-alpha-x-dark);
+}
+
 /*
     Component: Card
     ---
     Card with box shadow
 */
 
+.c-card {
+    background-color: #fff;
+    border-radius: var(--global-borderRadius);
+    border: var(--global-borderWidth) solid #0000000d;
+    box-shadow: 0 2px 4px #00000012;
+}
+
+.c-card__body {
+    padding: var(--global-whitespace) var(--global-whitespace-xl);
+}
+
+.c-card__title {
+    text-align: center;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: calc(var(--global-baseline) * 3);
+    padding-top: var(--global-whitespace-xl);
+}
+
+.c-card__footer {
+    padding: var(--global-whitespace) var(--global-whitespace) 0;
+    border-top: 1px solid #0000000d;
+    text-align: center;
+}
+
 /*
     Component: Forms
     ---
     Everything form related here
 */
+
+.form-field--option {
+    display: flex;
+    align-items: center;
+}
 
 /*
     Component: Input
@@ -451,10 +559,26 @@ a:focus {
 */
 
 .c-input {
+    /* Alle styling verwijderen */
+    all: unset;
 
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+    border: var(--global-borderWidth) solid var(--global-color-neutral-xxx-light);
+    border-radius: var(--global-borderRadius);
+    font-family: inherit;
+    color: inherit;
+    font-size: 16px;
+    line-height: calc(var(--global-baseline) * 3);
+    padding: 11px;
 }
 
 .c-input:focus {
+    outline: none;
+    border-color: var(--global-color-alpha);
+    box-shadow: h-offset v-offset blur spread color;
+    box-shadow: 0 0 0 3px var(--global-color-x-transparent);
 }
 
 /*
@@ -464,13 +588,19 @@ a:focus {
 */
 
 .c-label {
+    font-style: 14px;
+    line-height: calc(var(--global-baseline) * 2);
+    margin-bottom: var(--global-whitespace-sm);
+    color: var(--global-color-neutral-x-dark);
+}
 
+.c-label--option {
+    margin: 0 0 0 var(--global-whitespace-sm);
 }
 
 /* If a input is focused within the form-field class change te color of the label */
 
 .c-form-field:focus-within .c-label {
-
 }
 
 /*
@@ -480,23 +610,31 @@ a:focus {
 */
 
 .c-button {
-
+    font-size: 16;
+    font-weight: 600;
+    border: var(--global-borderWidth) solid var(--global-color-alpha-dark);
+    border-radius: var(--global-borderRadius);
+    color: #fff;
+    background-color: var(--global-color-alpha);
+    line-height: 20px;
+    padding: 13px;
+    width: 100%;
 }
 
 .c-button:hover {
-
+    background-color: var(--global-color-alpha-light);
 }
 
 .c-button:focus {
-
+    outline: none;
+    box-shadow: 0 0 0 3px var(--global-color-x-transparent);
 }
 
 .c-button:active {
-
+    background-color: var(--global-color-alpha-dark);
 }
 
 .c-button--block {
-
 }
 
 /*------------------------------------*\
@@ -532,23 +670,23 @@ a:focus {
 }
 
 .u-mb-xs {
-    margin-bottom: 4px !important;
+    margin-bottom: var(--global-whitespace-xm) !important;
 }
 
 .u-mb-sm {
-    margin-bottom: 8px !important;
+    margin-bottom: var(--global-whitespace-sm) !important;
 }
 
 .u-mb-md {
-    margin-bottom: 16px !important;
+    margin-bottom: var(--global-whitespace-md) !important;
 }
 
 .u-mb-lg {
-    margin-bottom: 32px !important;
+    margin-bottom: var(--global-whitespace-lg) !important;
 }
 
 .u-mb-xl {
-    margin-bottom: 48px !important;
+    margin-bottom: var(--global-whitespace-xl) !important;
 }
 
 /*
@@ -576,7 +714,6 @@ a:focus {
 .u-max-width-none {
     max-width: none !important;
 }
-
 
 /*
     Utilities: align
@@ -855,25 +992,25 @@ No media query since this is the default in mobile first design
         text-decoration: underline;
     }
     a[href]:after {
-        content: " (" attr(href) ")";
+        content: ' (' attr(href) ')';
     }
     abbr[title]:after {
-        content: " (" attr(title) ")";
+        content: ' (' attr(title) ')';
     }
     /*
     * Don't show links that are fragment identifiers,
     * or use the `javascript:` pseudo protocol
     */
-    a[href^="#"]:after,
-    a[href^="javascript:"]:after {
-        content: "";
+    a[href^='#']:after,
+    a[href^='javascript:']:after {
+        content: '';
     }
     pre {
         white-space: pre-wrap !important;
     }
     pre,
     blockquote {
-        border: 1px solid #999;
+        border: var(--global-borderWidth) solid #999;
         page-break-inside: avoid;
     }
     /*
