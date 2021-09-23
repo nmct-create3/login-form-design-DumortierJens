@@ -571,7 +571,7 @@ input {
     color: inherit;
     font-size: 16px;
     line-height: calc(var(--global-baseline) * 3);
-    padding: 11px;
+    padding: calc((48px - var(--global-borderWidth) * 2 - var(--global-baseline) * 3) / 2);
 }
 
 .c-input:focus {
@@ -616,8 +616,8 @@ input {
     border-radius: var(--global-borderRadius);
     color: #fff;
     background-color: var(--global-color-alpha);
-    line-height: 20px;
-    padding: 13px;
+    line-height: calc(var(--global-baseline) * 3);
+    padding: calc((48px - var(--global-borderWidth) * 2 - var(--global-baseline) * 3) / 2);
     width: 100%;
 }
 
